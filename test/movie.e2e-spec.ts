@@ -9,7 +9,7 @@ describe('Award Intervals (e2e)', () => {
   let app: INestApplication<Express>;
 
   const getAwardIntervals = async () => {
-    const httpServer = () => app.getHttpServer();
+    const httpServer = app.getHttpServer();
     const response = await request(httpServer)
       .get('/api/v1/awards/producers/intervals')
       .expect(200);
